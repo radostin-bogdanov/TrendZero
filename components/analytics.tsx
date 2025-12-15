@@ -1,42 +1,39 @@
 "use client";
 
 import Script from "next/script";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect, Suspense } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 /**
- * Google Analytics 4 Component - Internal
- * Handles GA4 initialization and page view tracking
- * 
- * Requires NEXT_PUBLIC_GA_MEASUREMENT_ID environment variable
- * Format: G-XXXXXXXXXX
+ * Google Analytics 4 Component - Page View Tracker
+ * Tracks page views on route changes using pathname only
+ * (Search params tracking removed to avoid Suspense boundary issues)
  */
-function GoogleAnalyticsInner() {
+function GoogleAnalyticsTracker() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-
   const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   // Track page views on route changes
   useEffect(() => {
-    if (!gaMeasurementId) return;
+    if (!gaMeasurementId || typeof window === "undefined") return;
 
-    const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
-
-    // Track page view
-    if (typeof window !== "undefined" && window.gtag) {
+    // Only track if gtag is available
+    if (window.gtag) {
       window.gtag("config", gaMeasurementId, {
-        page_path: url,
+        page_path: pathname,
       });
     }
-  }, [pathname, searchParams, gaMeasurementId]);
+  }, [pathname, gaMeasurementId]);
 
   return null;
 }
 
 /**
  * Google Analytics 4 Component
- * Wrapped in Suspense boundary to fix Next.js prerendering issues
+ * Handles GA4 initialization and page view tracking
+ * 
+ * Requires NEXT_PUBLIC_GA_MEASUREMENT_ID environment variable
+ * Format: G-XXXXXXXXXX
  */
 export function GoogleAnalytics() {
   const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -67,10 +64,8 @@ export function GoogleAnalytics() {
           `,
         }}
       />
-      {/* Page view tracking - wrapped in Suspense for Next.js compatibility */}
-      <Suspense fallback={null}>
-        <GoogleAnalyticsInner />
-      </Suspense>
+      {/* Page view tracking on route changes */}
+      <GoogleAnalyticsTracker />
     </>
   );
 }
