@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
+import { GoogleAnalytics } from "@/components/analytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -136,6 +137,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans antialiased`}>
+        {/* Google Analytics 4 */}
+        <GoogleAnalytics />
+        
         {/* Structured data for better SEO indexing */}
         <script
           type="application/ld+json"

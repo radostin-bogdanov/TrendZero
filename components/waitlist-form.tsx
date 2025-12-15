@@ -10,6 +10,7 @@ import {
   SelectTrigger,
 } from "@/components/ui/select";
 import { motion } from "framer-motion";
+import { trackWaitlistSignup } from "@/components/analytics";
 
 /**
  * Waitlist form component
@@ -57,6 +58,9 @@ export function WaitlistForm() {
       if (!response.ok) {
         throw new Error(data.error || "Something went wrong");
       }
+
+      // Track successful waitlist signup
+      trackWaitlistSignup("waitlist_form");
 
       setIsSuccess(true);
       setEmail("");

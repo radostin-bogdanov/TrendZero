@@ -51,6 +51,8 @@ cp .env.example .env.local
 Update the following variables:
 - `NEXT_PUBLIC_SUPABASE_URL`: Your Supabase project URL
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Your Supabase anonymous key
+- `NEXT_PUBLIC_SITE_URL`: Your production site URL (default: https://trendzero.io)
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID`: Your Google Analytics 4 Measurement ID (optional, format: G-XXXXXXXXXX)
 
 3. Set up Supabase database:
 
@@ -153,11 +155,31 @@ The project can be deployed to any platform that supports Next.js:
 
 ## Analytics
 
-To add analytics tracking (as specified in the BRD), you can:
+Google Analytics 4 (GA4) is integrated and ready to use:
 
-1. Add your analytics script to `app/layout.tsx`
-2. Track page views, CTA clicks, and signups
-3. Use the `useEffect` hook in components to track interactions
+1. **Set up GA4**: Get your Measurement ID from [Google Analytics](https://analytics.google.com/)
+2. **Add to environment variables**: Add `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX` to your `.env.local`
+3. **Automatic tracking**: The following events are automatically tracked:
+   - Page views (on route changes)
+   - CTA clicks (`cta_click` event with location and button text)
+   - Waitlist signups (`waitlist_signup` event with location)
+
+### Custom Event Tracking
+
+You can track custom events using the helper functions from `components/analytics.tsx`:
+
+```tsx
+import { trackEvent, trackCTAClick, trackWaitlistSignup } from "@/components/analytics";
+
+// Track custom event
+trackEvent("custom_event_name", { param1: "value1", param2: 123 });
+
+// Track CTA click
+trackCTAClick("section_name", "Button Text");
+
+// Track waitlist signup
+trackWaitlistSignup("section_name");
+```
 
 ## License
 

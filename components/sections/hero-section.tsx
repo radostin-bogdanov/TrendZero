@@ -3,6 +3,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { trackCTAClick } from "@/components/analytics";
 
 /**
  * Hero section component
@@ -12,6 +13,9 @@ import { Button } from "@/components/ui/button";
  */
 export function HeroSection() {
   const scrollToCTA = () => {
+    // Track CTA click
+    trackCTAClick("hero_section", "Get early access");
+    
     const ctaSection = document.getElementById("final-cta");
     ctaSection?.scrollIntoView({ behavior: "smooth" });
   };
