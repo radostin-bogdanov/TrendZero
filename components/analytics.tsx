@@ -2,16 +2,16 @@
 
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 
 /**
- * Google Analytics 4 Component
+ * Google Analytics 4 Component - Internal
  * Handles GA4 initialization and page view tracking
  * 
  * Requires NEXT_PUBLIC_GA_MEASUREMENT_ID environment variable
  * Format: G-XXXXXXXXXX
  */
-export function GoogleAnalytics() {
+function GoogleAnalyticsInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -30,6 +30,16 @@ export function GoogleAnalytics() {
       });
     }
   }, [pathname, searchParams, gaMeasurementId]);
+
+  return null;
+}
+
+/**
+ * Google Analytics 4 Component
+ * Wrapped in Suspense boundary to fix Next.js prerendering issues
+ */
+export function GoogleAnalytics() {
+  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   // Don't render if GA ID is not provided
   if (!gaMeasurementId) {
@@ -57,6 +67,10 @@ export function GoogleAnalytics() {
           `,
         }}
       />
+      {/* Page view tracking - wrapped in Suspense for Next.js compatibility */}
+      <Suspense fallback={null}>
+        <GoogleAnalyticsInner />
+      </Suspense>
     </>
   );
 }
