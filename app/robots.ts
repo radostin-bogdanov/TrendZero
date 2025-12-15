@@ -9,7 +9,7 @@ import { MetadataRoute } from 'next';
  */
 export default function robots(): MetadataRoute.Robots {
   // Base URL - update this with your production domain
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://trendzero.io';
 
   return {
     rules: {
