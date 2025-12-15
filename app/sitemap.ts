@@ -6,28 +6,35 @@ import { MetadataRoute } from 'next';
  * 
  * For a single-page landing site, we include the main page
  * Update lastModified with actual deployment dates for better SEO
+ * 
+ * This sitemap is automatically available at /sitemap.xml
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   // Base URL - update this with your production domain
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://trendzero.io';
+  // Ensure no trailing slash for consistency
+  const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://trendzero.io').replace(/\/$/, '');
 
-  // Current date for lastModified
+  // Current date for lastModified - ensure it's a valid Date object
   const currentDate = new Date();
 
-  return [
+  // Main landing page entry
+  const sitemapEntries: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: currentDate,
-      changeFrequency: 'monthly', // Landing pages typically don't change frequently
-      priority: 1.0, // Highest priority for the main landing page
+      changeFrequency: 'monthly',
+      priority: 1.0,
     },
-    // Add more pages here as your site grows
-    // Example:
-    // {
-    //   url: `${baseUrl}/about`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly',
-    //   priority: 0.8,
-    // },
   ];
+
+  // Add more pages here as your site grows
+  // Example:
+  // sitemapEntries.push({
+  //   url: `${baseUrl}/about`,
+  //   lastModified: currentDate,
+  //   changeFrequency: 'monthly',
+  //   priority: 0.8,
+  // });
+
+  return sitemapEntries;
 }
