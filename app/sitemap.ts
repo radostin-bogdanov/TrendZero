@@ -25,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 1.0,
     },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
   ];
 
   // Add more pages here as your site grows

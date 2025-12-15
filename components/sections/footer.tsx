@@ -1,4 +1,5 @@
 import { Logo } from "@/components/logo";
+import Link from "next/link";
 
 /**
  * Footer component
@@ -27,12 +28,12 @@ export function Footer() {
             >
               Contact
             </a>
-            <a
-              href="#"
+            <Link
+              href="/privacy-policy"
               className="hover:text-foreground transition-colors"
             >
               Privacy Policy
-            </a>
+            </Link>
             <a
               href="#"
               className="hover:text-foreground transition-colors"
