@@ -38,7 +38,7 @@ export function Logo({ className = "", showText = true, size = "md" }: LogoProps
       >
         <Image
           src="/Logo2-2.png"
-          alt="TrendZero Logo"
+          alt="TrendZero - Early SaaS Trend Detection Using Real Market Signals"
           width={200}
           height={60}
           className="h-full w-auto object-contain"

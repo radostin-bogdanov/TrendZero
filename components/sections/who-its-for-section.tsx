@@ -24,13 +24,23 @@ export function WhoItsForSection() {
   return (
     <section className="border-y border-border bg-muted/30 px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
       <div className="mx-auto max-w-5xl">
-        <div className="grid gap-8 sm:grid-cols-2">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl"
+        >
+          Who it's for
+        </motion.h2>
+        <div className="grid gap-8 sm:grid-cols-2 sm:items-start">
           {/* Built for */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col"
           >
             <h3 className="mb-4 text-xl font-semibold text-primary">
               Built for
@@ -46,7 +56,7 @@ export function WhoItsForSection() {
                   className="flex items-center gap-3"
                 >
                   <svg
-                    className="h-5 w-5 text-primary"
+                    className="h-5 w-5 shrink-0 text-primary"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -70,6 +80,7 @@ export function WhoItsForSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col"
           >
             <h3 className="mb-4 text-xl font-semibold text-muted-foreground">
               Not for
@@ -85,7 +96,7 @@ export function WhoItsForSection() {
                   className="flex items-center gap-3 text-muted-foreground"
                 >
                   <svg
-                    className="h-5 w-5 text-muted-foreground"
+                    className="h-5 w-5 shrink-0 text-muted-foreground"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

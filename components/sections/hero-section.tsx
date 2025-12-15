@@ -154,9 +154,9 @@ export function HeroSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative mb-6 bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl lg:text-6xl drop-shadow-sm"
         >
-          Build and market what's about to trend —{" "}
+          Early SaaS Trend Detection Using Real Market Signals —{" "}
           <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-            not what already peaked.
+            Know What's About to Trend
           </span>
         </motion.h1>
 

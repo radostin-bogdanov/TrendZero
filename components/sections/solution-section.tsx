@@ -32,11 +32,19 @@ export function SolutionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-6 text-lg leading-8 text-muted-foreground"
+        >
+          <span className="font-semibold text-foreground">TrendZero</span> provides early SaaS trend detection using real market signals from across the web. Instead of waiting for topics to peak, we analyze acceleration patterns, cross-reference multiple data sources, and identify emerging trends before they become mainstream. Our platform tracks real signals—not just popularity metrics—to show you what's gaining momentum right now.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-10 text-lg leading-8 text-muted-foreground"
         >
-          <span className="font-semibold text-foreground">TrendZero</span> detects early acceleration in SaaS-related topics by
-          analyzing real signals from across the web — then explains why they
-          matter and what you should do next.
+          Every trend comes with context: why it matters, who it's relevant for, and concrete actions you can take. Whether you're planning your next feature, writing content, or positioning your product, you'll know what to focus on before your competitors do. This is early SaaS trend detection using real market signals—the difference between following trends and leading them.
         </motion.p>
 
         <motion.ul

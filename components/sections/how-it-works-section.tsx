@@ -106,10 +106,20 @@ export function HowItWorksSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl"
+          className="mb-6 text-center text-3xl font-bold tracking-tight sm:text-4xl"
         >
           How it works
         </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-12 mx-auto max-w-3xl text-center text-lg leading-8 text-muted-foreground"
+        >
+          Our platform uses advanced algorithms to perform early SaaS trend detection using real market signals. We monitor conversations, engagement patterns, and growth indicators across multiple platforms simultaneously, identifying acceleration before it becomes obvious. The process is transparent, actionable, and designed for founders who need to move fast.
+        </motion.p>
 
         {/* Process flow with enhanced focus */}
         <div className="relative my-16">
@@ -247,8 +257,11 @@ export function HowItWorksSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-6 text-center"
         >
-          <p className="text-sm font-medium text-primary">
+          <p className="text-sm font-medium text-primary mb-3">
             No black boxes. Every trend comes with a clear "why".
+          </p>
+          <p className="text-sm text-muted-foreground">
+            We show you the actual market signals behind each trend—where the data comes from, why it matters, and how you can use it. Early SaaS trend detection using real market signals means transparency, not mystery.
           </p>
         </motion.div>
       </div>
