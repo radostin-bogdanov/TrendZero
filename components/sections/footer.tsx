@@ -22,24 +22,24 @@ export function Footer() {
             className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground"
             aria-label="Footer navigation"
           >
-            <a
-              href="mailto:contact@trendzero.com"
+            <Link
+              href="/contact"
               className="hover:text-foreground transition-colors"
             >
               Contact
-            </a>
+            </Link>
             <Link
               href="/privacy-policy"
               className="hover:text-foreground transition-colors"
             >
               Privacy Policy
             </Link>
-            <a
-              href="#"
+            <Link
+              href="/terms-of-service"
               className="hover:text-foreground transition-colors"
             >
               Terms of Service
-            </a>
+            </Link>
           </nav>
 
           {/* Copyright */}

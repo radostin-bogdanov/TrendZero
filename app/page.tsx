@@ -6,6 +6,7 @@ import { WhatYouGetSection } from "@/components/sections/what-you-get-section";
 import { WhoItsForSection } from "@/components/sections/who-its-for-section";
 import { CredibilitySection } from "@/components/sections/credibility-section";
 import { PricingSection } from "@/components/sections/pricing-section";
+import { FAQSection } from "@/components/sections/faq-section";
 import { FinalCTASection } from "@/components/sections/final-cta-section";
 import { Footer } from "@/components/sections/footer";
 
@@ -25,6 +26,7 @@ export default function Home() {
       <WhoItsForSection />
       <CredibilitySection />
       <PricingSection />
+      <FAQSection />
       <FinalCTASection />
       <Footer />
     </main>
