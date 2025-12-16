@@ -15,7 +15,7 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://trendzero.io";
 export const metadata: Metadata = {
   title: "TrendZero — Early SaaS Trend Detection Using Real Market Signals",
   description:
-    "Early SaaS trend detection using real market signals. Know what your users will care about next — before it's obvious. Track early signals and build what's about to trend.",
+    "Identify SaaS trends early using real market signals. Know what your users will care about next — before it's obvious. Track acceleration signals and build what's about to trend.",
   keywords: [
     "SaaS trend detection",
     "early SaaS trends",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TrendZero — Early SaaS Trend Detection Using Real Market Signals",
     description:
-      "Early SaaS trend detection using real market signals. Know what your users will care about next — before it's obvious.",
+      "Spot emerging SaaS topics before they peak. Know what your users will care about next — before it's obvious.",
     url: baseUrl,
     siteName: "TrendZero",
     images: [
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TrendZero — Early SaaS Trend Detection Using Real Market Signals",
     description:
-      "Early SaaS trend detection using real market signals. Know what's about to trend before it's obvious.",
+      "Identify SaaS trends early. Know what's about to trend before it's obvious.",
     images: [`${baseUrl}/Logo2-2.png`],
   },
   robots: {
@@ -90,7 +90,7 @@ export default function RootLayout({
     url: baseUrl,
     logo: `${baseUrl}/Logo2-2.png`,
     description:
-      "Early SaaS trend detection using real market signals. Know what's about to trend before it's obvious.",
+      "Track acceleration signals to spot emerging SaaS topics. Know what's about to trend before it's obvious.",
     sameAs: [],
   };
 
@@ -101,7 +101,7 @@ export default function RootLayout({
     name: "TrendZero",
     url: baseUrl,
     description:
-      "Early SaaS trend detection using real market signals. Track early signals and build what's about to trend.",
+      "Identify SaaS trends early by tracking acceleration signals. Build what's about to trend before your competitors.",
     potentialAction: {
       "@type": "SearchAction",
       target: {
@@ -125,7 +125,7 @@ export default function RootLayout({
       priceCurrency: "USD",
     },
     description:
-      "Early SaaS trend detection platform using real market signals. Identify emerging trends before they peak.",
+      "SaaS trend detection platform that tracks acceleration signals and trend momentum. Identify emerging trends before they peak.",
     featureList: [
       "Early SaaS trend detection",
       "Real market signal analysis",

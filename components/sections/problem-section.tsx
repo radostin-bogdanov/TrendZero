@@ -37,7 +37,7 @@ export function ProblemSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-8 text-lg leading-8 text-muted-foreground"
         >
-          In today's fast-moving SaaS landscape, timing is everything. While you're researching what worked last quarter, your competitors are already building for what's trending now. The gap between spotting a trend and capitalizing on it is where opportunities are lost and market share shifts. Without early SaaS trend detection using real market signals, you're always playing catch-up.
+          In today's fast-moving SaaS landscape, timing is everything. While you're researching what worked last quarter, your competitors are already building for what's trending now. The gap between spotting a trend and capitalizing on it is where opportunities are lost and market share shifts. Without the ability to identify SaaS trends early, you're always playing catch-up.
         </motion.p>
 
         <motion.ul

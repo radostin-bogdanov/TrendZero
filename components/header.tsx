@@ -21,7 +21,19 @@ export function Header() {
         </a>
         <nav className="flex items-center gap-6">
           <a
-            href="#final-cta"
+            href="/#how-it-works"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            How it works
+          </a>
+          <a
+            href="/blog"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Blog
+          </a>
+          <a
+            href="/#final-cta"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Get Early Access

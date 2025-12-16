@@ -23,6 +23,12 @@ export function Footer() {
             aria-label="Footer navigation"
           >
             <Link
+              href="/about-us"
+              className="hover:text-foreground transition-colors"
+            >
+              About Us
+            </Link>
+            <Link
               href="/contact"
               className="hover:text-foreground transition-colors"
             >
@@ -44,7 +50,7 @@ export function Footer() {
 
           {/* Copyright */}
           <div className="text-sm text-muted-foreground">
-            © {currentYear} TrendZero
+            © {currentYear} AI Engineering LTD
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ export function SolutionSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-6 text-lg leading-8 text-muted-foreground"
         >
-          <span className="font-semibold text-foreground">TrendZero</span> provides early SaaS trend detection using real market signals from across the web. Instead of waiting for topics to peak, we analyze acceleration patterns, cross-reference multiple data sources, and identify emerging trends before they become mainstream. Our platform tracks real signals—not just popularity metrics—to show you what's gaining momentum right now.
+          <span className="font-semibold text-foreground">TrendZero</span> helps you identify SaaS trends early by tracking acceleration signals from across the web. Instead of waiting for topics to peak, we analyze acceleration patterns, cross-reference multiple data sources, and spot emerging SaaS topics before they become mainstream. Our platform tracks trend velocity and momentum—not just popularity metrics—to show you what's gaining traction right now.
         </motion.p>
 
         <motion.p
@@ -44,7 +44,7 @@ export function SolutionSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-10 text-lg leading-8 text-muted-foreground"
         >
-          Every trend comes with context: why it matters, who it's relevant for, and concrete actions you can take. Whether you're planning your next feature, writing content, or positioning your product, you'll know what to focus on before your competitors do. This is early SaaS trend detection using real market signals—the difference between following trends and leading them.
+          Every trend comes with context: why it matters, who it's relevant for, and concrete actions you can take. Whether you're planning your next feature, writing content, or positioning your product, you'll know what to focus on before your competitors do. This is how you spot emerging SaaS topics early—the difference between following trends and leading them.
         </motion.p>
 
         <motion.ul

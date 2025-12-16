@@ -43,16 +43,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.5,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/saaS-solopreneurs-challenge-finding-project-ideas`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/about-us`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ];
-
-  // Add more pages here as your site grows
-  // Example:
-  // sitemapEntries.push({
-  //   url: `${baseUrl}/about`,
-  //   lastModified: currentDate,
-  //   changeFrequency: 'monthly',
-  //   priority: 0.8,
-  // });
 
   return sitemapEntries;
 }

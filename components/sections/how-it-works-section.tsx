@@ -99,7 +99,7 @@ export function HowItWorksSection() {
   ];
 
   return (
-    <section className="border-y border-border bg-muted/30 px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <section id="how-it-works" className="border-y border-border bg-muted/30 px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
       <div className="mx-auto max-w-5xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -118,7 +118,7 @@ export function HowItWorksSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-12 mx-auto max-w-3xl text-center text-lg leading-8 text-muted-foreground"
         >
-          Our platform uses advanced algorithms to perform early SaaS trend detection using real market signals. We monitor conversations, engagement patterns, and growth indicators across multiple platforms simultaneously, identifying acceleration before it becomes obvious. The process is transparent, actionable, and designed for founders who need to move fast.
+          Our platform uses advanced algorithms to track acceleration signals and identify SaaS trends early. We monitor conversations, engagement patterns, and growth indicators across multiple platforms simultaneously, measuring trend velocity and momentum before it becomes obvious. The process is transparent, actionable, and designed for founders who need to move fast.
         </motion.p>
 
         {/* Process flow with enhanced focus */}
@@ -261,7 +261,7 @@ export function HowItWorksSection() {
             No black boxes. Every trend comes with a clear "why".
           </p>
           <p className="text-sm text-muted-foreground">
-            We show you the actual market signals behind each trend—where the data comes from, why it matters, and how you can use it. Early SaaS trend detection using real market signals means transparency, not mystery.
+            We show you the actual market signals behind each trend—where the data comes from, why it matters, and how you can use it. Tracking acceleration signals to spot emerging SaaS topics means transparency, not mystery.
           </p>
         </motion.div>
       </div>
