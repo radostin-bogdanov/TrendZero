@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { WaitlistForm } from "@/components/waitlist-form";
 
 /**
@@ -36,6 +37,24 @@ export function FinalCTASection() {
           <br />
           Join the list and help shape the product.
         </motion.p>
+
+        {/* Platform screenshot showcasing TrendZero's interface */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="mb-10 overflow-hidden rounded-xl border border-border shadow-lg"
+        >
+          <Image
+            src="/platform-screen1.png"
+            alt="TrendZero platform interface showing emerging SaaS trends"
+            width={1200}
+            height={800}
+            className="h-auto w-full object-contain"
+            priority
+          />
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
