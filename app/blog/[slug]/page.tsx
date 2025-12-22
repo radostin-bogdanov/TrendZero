@@ -206,7 +206,7 @@ const blogPosts: Record<
         </p>
 
         <p className="text-muted-foreground leading-relaxed">
-          If you want to learn more about how to discover SaaS trends before they become obvious, check out <span className="font-semibold text-foreground">TrendZero</span>—a platform that analyzes early signals and shows what's accelerating now, not what was popular months ago.
+          If you want to learn more about how to discover SaaS trends before they become obvious, check out <span className="font-semibold text-foreground">TrendZero</span> - a platform that analyzes early signals and shows what's accelerating now, not what was popular months ago.
         </p>
       </div>
     ),
