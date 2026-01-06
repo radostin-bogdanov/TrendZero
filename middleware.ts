@@ -2,33 +2,54 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 /**
- * Middleware to handle HTTP to HTTPS redirects
+ * Middleware to handle URL canonicalization redirects
  * 
- * This ensures that all HTTP requests are redirected to HTTPS,
- * which is important for SEO and security. Google Search Console
- * flags pages with redirects, but this is the proper way to handle
- * HTTP to HTTPS migration.
+ * This ensures proper SEO by redirecting to the canonical URL:
+ * 1. HTTP → HTTPS (security and SEO best practice)
+ * 2. www → non-www (canonical domain is trendzero.io without www)
  * 
- * The redirect is only applied in production to avoid issues during
+ * Google Search Console flags pages with redirects, but these are
+ * necessary redirects for proper SEO and domain canonicalization.
+ * 
+ * The redirects are only applied in production to avoid issues during
  * local development.
  */
 export function middleware(request: NextRequest) {
-  // Only redirect HTTP to HTTPS in production
-  // Skip redirect in development (localhost) or if already HTTPS
-  if (
-    process.env.NODE_ENV === 'production' &&
-    request.nextUrl.protocol === 'http:' &&
-    !request.nextUrl.hostname.includes('localhost')
-  ) {
-    // Get the HTTPS URL
-    const httpsUrl = request.nextUrl.clone();
-    httpsUrl.protocol = 'https:';
-    
-    // Redirect with 301 (permanent redirect) for SEO
-    return NextResponse.redirect(httpsUrl, {
+  // Skip redirects in development (localhost)
+  if (request.nextUrl.hostname.includes('localhost')) {
+    return NextResponse.next();
+  }
+
+  // Only apply redirects in production
+  if (process.env.NODE_ENV !== 'production') {
+    return NextResponse.next();
+  }
+
+  const url = request.nextUrl.clone();
+  let needsRedirect = false;
+
+  // 1. Redirect HTTP to HTTPS
+  if (url.protocol === 'http:') {
+    url.protocol = 'https:';
+    needsRedirect = true;
+  }
+
+  // 2. Redirect www to non-www (canonical domain is trendzero.io)
+  // This ensures consistent domain usage for SEO
+  if (url.hostname.startsWith('www.')) {
+    url.hostname = url.hostname.replace(/^www\./, '');
+    needsRedirect = true;
+  }
+
+  // Perform redirect if needed
+  if (needsRedirect) {
+    // Use 301 (permanent redirect) for SEO
+    // This tells search engines that the redirect is permanent
+    // and they should update their index accordingly
+    return NextResponse.redirect(url, {
       status: 301,
       headers: {
-        // Add cache headers to help search engines understand this is permanent
+        // Cache headers help search engines understand this is permanent
         'Cache-Control': 'public, max-age=31536000, immutable',
       },
     });
@@ -57,5 +78,6 @@ export const config = {
     '/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot)).*)',
   ],
 };
+
 
 

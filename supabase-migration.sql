@@ -32,3 +32,4 @@ create policy "Allow public inserts" on waitlist_signups
 --   using (auth.uid()::text = id::text);
 
 
+
