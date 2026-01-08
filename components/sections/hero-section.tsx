@@ -169,17 +169,36 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="relative mx-auto mb-10 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl drop-shadow-sm"
+          className="relative mx-auto mb-8 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl drop-shadow-sm"
         >
           <span className="font-semibold text-foreground">TrendZero</span> tracks early signals across the web and shows you which SaaS topics
           are accelerating — so you can act before everyone else.
         </motion.p>
 
-        {/* CTA Button with hover glow effect */}
+        {/* Video Demo Section - Compact size, positioned before CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="relative mb-8 mx-auto max-w-2xl"
+        >
+          {/* Responsive YouTube video embed container - optimized size */}
+          <div className="relative w-full" style={{ paddingBottom: "56.25%" }}> {/* 16:9 aspect ratio */}
+            <iframe
+              className="absolute top-0 left-0 w-full h-full rounded-lg shadow-xl border border-border/50"
+              src="https://www.youtube.com/embed/cPa20YpROf0"
+              title="Platform Demo Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </motion.div>
+
+        {/* CTA Button with hover glow effect */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           className="relative"
         >
           <motion.div
