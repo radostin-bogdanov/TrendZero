@@ -158,7 +158,7 @@ export function HeroSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative mb-6 bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl lg:text-6xl drop-shadow-sm"
         >
-          Early SaaS Trend Detection Using Real Market Signals —{" "}
+          Early SaaS Trend Detection Using Real Market Signals - {" "}
           <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
             Know What's About to Trend
           </span>
@@ -172,7 +172,7 @@ export function HeroSection() {
           className="relative mx-auto mb-8 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl drop-shadow-sm"
         >
           <span className="font-semibold text-foreground">TrendZero</span> tracks early signals across the web and shows you which SaaS topics
-          are accelerating — so you can act before everyone else.
+          are accelerating - so you can act before everyone else.
         </motion.p>
 
         {/* Video Demo Section - Compact size, positioned before CTA */}
