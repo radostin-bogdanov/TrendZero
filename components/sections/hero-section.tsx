@@ -186,7 +186,7 @@ export function HeroSection() {
           <div className="relative w-full" style={{ paddingBottom: "56.25%" }}> {/* 16:9 aspect ratio */}
             <iframe
               className="absolute top-0 left-0 w-full h-full rounded-lg shadow-xl border border-border/50"
-              src="https://www.youtube.com/embed/cPa20YpROf0"
+              src="https://www.youtube.com/embed/YFraolt5VqE"
               title="Platform Demo Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
