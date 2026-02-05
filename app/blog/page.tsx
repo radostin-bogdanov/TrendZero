@@ -25,6 +25,14 @@ const blogPosts = [
     readTime: "9 min",
   },
   {
+    slug: "early-signals-the-key-to-success",
+    title: "Early Signals: The Key to Success",
+    excerpt:
+      "Learn how successful SaaS founders identify and act on early signals to build products that matter, create content that resonates, and position themselves ahead of the competition.",
+    date: "2026-01-11",
+    readTime: "7 min",
+  },
+  {
     slug: "why-most-saas-trends-are-discovered-too-late",
     title: "Why Most SaaS Trends Are Discovered Too Late",
     excerpt:
