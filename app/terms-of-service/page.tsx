@@ -25,7 +25,7 @@ export const metadata: Metadata = {
  */
 export default function TermsOfServicePage() {
   const currentYear = new Date().getFullYear();
-  const lastUpdated = "December 2024";
+  const lastUpdated = "December 2025";
 
   return (
     <main className="min-h-screen bg-background">
@@ -140,9 +140,17 @@ export default function TermsOfServicePage() {
                 recognition. They do not involve high-risk AI applications as defined in the EU AI Act.
               </li>
               <li>
+                <strong>Risk Classification:</strong> In accordance with Article 6 of Regulation (EU) 2024/1689, 
+                our AI systems are classified as <strong>limited-risk AI systems</strong>. Our Service does not fall 
+                into any of the prohibited AI practices (Article 5), nor does it qualify as a high-risk AI system 
+                (Articles 6-7). Our AI systems are used for trend analysis and market signal detection, which are 
+                considered limited-risk applications that require transparency obligations under Article 50 of the EU AI Act.
+              </li>
+              <li>
                 <strong>Transparency:</strong> We are committed to transparency regarding our use of AI. 
                 While our algorithms analyze data to identify trends, we provide explanations for identified 
-                trends and their significance.
+                trends and their significance. In compliance with Article 50 of the EU AI Act, we clearly inform 
+                users when they are interacting with an AI system.
               </li>
               <li>
                 <strong>Human Oversight:</strong> Our AI systems operate under human oversight. All trend 
@@ -163,14 +171,61 @@ export default function TermsOfServicePage() {
               and service descriptions. You may request information about the logic, significance, and consequences 
               of our AI systems' processing of your data.
             </p>
-            <p className="text-muted-foreground">
+            <p className="mb-4 text-muted-foreground">
+              <strong>Competent Authority:</strong> In accordance with Article 63 of the EU AI Act, each Member State 
+              must designate a national competent authority responsible for the implementation and enforcement of the 
+              AI Act. For Bulgaria, the competent authority for AI Act matters is the{" "}
+              <strong>Commission for Personal Data Protection (Комисия за защита на личните данни)</strong>, which also 
+              serves as the market surveillance authority for AI systems.
+            </p>
+            <p className="mb-4 text-muted-foreground">
               If you have concerns about our use of AI or wish to exercise your rights under the EU AI Act, 
-              please contact us at{" "}
+              you may contact us at{" "}
               <a
                 href="mailto:info@ai-eng.tech"
                 className="text-primary hover:underline"
               >
                 info@ai-eng.tech
+              </a>
+              {" "}or file a complaint with the competent authority:
+            </p>
+            <div className="mb-4 rounded-lg border border-border bg-muted/30 p-6">
+              <p className="mb-2 text-muted-foreground">
+                <strong className="text-foreground">Commission for Personal Data Protection</strong>
+              </p>
+              <p className="mb-2 text-muted-foreground">
+                <strong className="text-foreground">Address:</strong> 2 Prof. Tsvetan Lazarov Blvd., 1592 Sofia, Bulgaria
+              </p>
+              <p className="mb-2 text-muted-foreground">
+                <strong className="text-foreground">Website:</strong>{" "}
+                <a
+                  href="https://www.cpdp.bg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  https://www.cpdp.bg
+                </a>
+              </p>
+              <p className="mb-2 text-muted-foreground">
+                <strong className="text-foreground">Email:</strong>{" "}
+                <a
+                  href="mailto:kdop@cpdp.bg"
+                  className="text-primary hover:underline"
+                >
+                  kdop@cpdp.bg
+                </a>
+              </p>
+            </div>
+            <p className="text-muted-foreground">
+              For more information about the EU AI Act and your rights, please visit the{" "}
+              <a
+                href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                European Commission's AI Act website
               </a>
               .
             </p>

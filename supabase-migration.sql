@@ -33,3 +33,4 @@ create policy "Allow public inserts" on waitlist_signups
 
 
 
+

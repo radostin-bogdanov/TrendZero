@@ -18,7 +18,7 @@ export const metadata: Metadata = {
  */
 export default function PrivacyPolicyPage() {
   const currentYear = new Date().getFullYear();
-  const lastUpdated = "December 2024";
+  const lastUpdated = "December 2025";
 
   return (
     <main className="min-h-screen bg-background">
