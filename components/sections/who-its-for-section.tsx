@@ -29,7 +29,7 @@ export function WhoItsForSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl"
+          className="font-heading mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl"
         >
           Who it's for
         </motion.h2>

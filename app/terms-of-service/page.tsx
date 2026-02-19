@@ -115,10 +115,10 @@ export default function TermsOfServicePage() {
               <li>Analysis of market signals from various online sources</li>
               <li>Trend acceleration tracking and validation</li>
               <li>Actionable insights and recommendations</li>
-              <li>Waitlist management for early access users</li>
+              <li>User accounts and subscription management at app.trendzero.io</li>
             </ul>
             <p className="text-muted-foreground">
-              The Service is currently in early access/pre-launch phase. We reserve the right to modify, suspend, 
+              The Service is live at app.trendzero.io. We reserve the right to modify, suspend, 
               or discontinue any aspect of the Service at any time, with or without notice.
             </p>
           </section>
@@ -249,9 +249,9 @@ export default function TermsOfServicePage() {
               <li>You will maintain the security of your account credentials</li>
             </ul>
             <p className="text-muted-foreground">
-              <strong>Waitlist Signup:</strong> During the early access phase, you may sign up for our waitlist 
-              by providing your email address. By signing up, you consent to receive communications from us 
-              regarding the Service, including early access notifications and product updates.
+              <strong>Account Registration:</strong> You may create an account at app.trendzero.io 
+              by providing your email address and other required information. By registering, you consent to receive 
+              communications from us regarding the Service, including product updates and service-related notifications.
             </p>
           </section>
 
@@ -395,7 +395,7 @@ export default function TermsOfServicePage() {
               <li>
                 <strong>Right to Withdraw:</strong> For distance contracts, you have the right to withdraw from the 
                 contract within 14 days without giving any reason, in accordance with Directive 2011/83/EU and Bulgarian 
-                law. This right applies to paid services. For free services (such as waitlist signup), withdrawal rights 
+                law. This right applies to paid services. For free tier or trial services, withdrawal rights 
                 may not apply.
               </li>
               <li>
@@ -434,12 +434,11 @@ export default function TermsOfServicePage() {
           <section className="mb-12">
             <h2 className="mb-4 text-2xl font-bold">11. Pricing and Payment Terms</h2>
             <p className="mb-4 text-muted-foreground">
-              <strong>Current Status:</strong> The Service is currently in early access/pre-launch phase. Waitlist 
-              signup is free, and no payment is required at this time.
+              <strong>Current Status:</strong> The Service is live at app.trendzero.io with paid plans available. 
+              Pricing is displayed on our Pricing page and at the time of signup.
             </p>
             <p className="mb-4 text-muted-foreground">
-              <strong>Future Pricing:</strong> We reserve the right to introduce pricing for the Service in the future. 
-              If and when we introduce paid plans:
+              <strong>Pricing:</strong> Paid plans are available. When you subscribe to a paid plan:
             </p>
             <ul className="mb-4 list-disc space-y-2 pl-6 text-muted-foreground">
               <li>All pricing will be clearly displayed before you commit to a paid plan</li>

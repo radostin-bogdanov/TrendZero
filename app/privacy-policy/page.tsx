@@ -70,8 +70,8 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="mb-4 list-disc space-y-2 pl-6 text-muted-foreground">
               <li>
-                <strong>Email Address</strong> - Required for waitlist signup
-                and early access notifications
+                <strong>Email Address</strong> - Required for account
+                registration at app.trendzero.io and service-related communications
               </li>
               <li>
                 <strong>Role Information</strong> - Optional information about
@@ -85,9 +85,8 @@ export default function PrivacyPolicyPage() {
                 Google Analytics 4 (anonymized)
               </li>
               <li>
-                <strong>Technical Data</strong> - Source information
-                (automatically set as "landing") and timestamps for waitlist
-                signups
+                <strong>Technical Data</strong> - Account creation data, subscription
+                information, and usage timestamps when using our platform at app.trendzero.io
               </li>
             </ul>
           </section>
@@ -102,8 +101,8 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="mb-4 list-disc space-y-2 pl-6 text-muted-foreground">
               <li>
-                <strong>Waitlist Management</strong> - To manage early access
-                signups and notify you when the product becomes available
+                <strong>Account and Subscription Management</strong> - To manage your
+                account at app.trendzero.io, process subscriptions, and provide the service
               </li>
               <li>
                 <strong>Product Development</strong> - To understand our
@@ -132,7 +131,7 @@ export default function PrivacyPolicyPage() {
             <ul className="mb-4 list-disc space-y-2 pl-6 text-muted-foreground">
               <li>
                 <strong>Consent</strong> - When you voluntarily provide your
-                email address for waitlist signup, you consent to our
+                email address to register for an account at app.trendzero.io, you consent to our
                 processing of this data
               </li>
               <li>
@@ -195,9 +194,9 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="mb-4 list-disc space-y-2 pl-6 text-muted-foreground">
               <li>
-                <strong>Waitlist Data</strong> - We retain email addresses and
-                associated information for 2 years from the date of collection,
-                or until you request deletion, whichever comes first
+                <strong>Account Data</strong> - We retain account and subscription
+                data for as long as your account is active, or until you request deletion,
+                whichever comes first
               </li>
               <li>
                 <strong>Analytics Data</strong> - Google Analytics retains data

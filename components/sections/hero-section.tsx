@@ -4,33 +4,27 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { trackCTAClick } from "@/components/analytics";
+import { APP_URL } from "@/lib/config";
+import { WaveDivider } from "./wave-divider";
 
 /**
  * Hero section component
- * Above-the-fold content with headline, subheadline, and primary CTA
- * Designed to communicate value in under 10 seconds
- * Enhanced with animated gradient background and floating elements
+ * Split layout on desktop: text left, video right
+ * Punchier headline, gradient badge, stronger CTA
  */
 export function HeroSection() {
-  const scrollToCTA = () => {
-    // Track CTA click
-    trackCTAClick("hero_section", "Get early access");
-    
-    const ctaSection = document.getElementById("final-cta");
-    ctaSection?.scrollIntoView({ behavior: "smooth" });
+  const handleGetStartedClick = () => {
+    trackCTAClick("hero_section", "Get Started");
+    window.open(APP_URL, "_blank", "noopener,noreferrer");
   };
 
-  // Mouse tracking for parallax effect
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Smooth spring animations for mouse tracking
   const springConfig = { damping: 50, stiffness: 100 };
   const x = useSpring(mouseX, springConfig);
   const y = useSpring(mouseY, springConfig);
-
-  // Transform values for background elements
   const backgroundX = useTransform(x, (value) => value * 0.02);
   const backgroundY = useTransform(y, (value) => value * 0.02);
 
@@ -44,7 +38,6 @@ export function HeroSection() {
         mouseY.set(e.clientY - centerY);
       }
     };
-
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
@@ -54,19 +47,11 @@ export function HeroSection() {
       ref={sectionRef}
       className="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-8"
     >
-      {/* Animated gradient background - extends beyond section */}
+      {/* Background */}
       <div className="absolute inset-0 -z-10">
-        {/* Base gradient with animation */}
         <motion.div
-          animate={{
-            backgroundPosition: ["0% 0%", "100% 100%"],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "linear",
-          }}
+          animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
+          transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
           style={{
             backgroundImage:
               "radial-gradient(at 40% 20%, hsl(var(--primary) / 0.15) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(var(--primary) / 0.1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(var(--primary) / 0.1) 0px, transparent 50%)",
@@ -76,155 +61,139 @@ export function HeroSection() {
           }}
           className="absolute inset-0"
         />
-
-        {/* Animated gradient orb 1 */}
         <motion.div
-          animate={{
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          style={{
-            x: backgroundX,
-            y: backgroundY,
-          }}
+          animate={{ x: [0, 100, 0], y: [0, 50, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          style={{ x: backgroundX, y: backgroundY }}
           className="absolute top-20 left-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl"
         />
-
-        {/* Animated gradient orb 2 */}
         <motion.div
-          animate={{
-            x: [0, -80, 0],
-            y: [0, 100, 0],
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          animate={{ x: [0, -80, 0], y: [0, 100, 0], scale: [1, 1.3, 1] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
           style={{
             x: useTransform(backgroundX, (v) => -v * 1.5),
             y: useTransform(backgroundY, (v) => v * 1.5),
           }}
           className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-primary/8 blur-3xl"
         />
-
-        {/* Floating geometric shapes */}
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            initial={{
-              opacity: 0.1,
-              scale: 0.8,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              rotate: [0, 180, 360],
-              opacity: [0.1, 0.2, 0.1],
-            }}
-            transition={{
-              duration: 8 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.5,
-            }}
+            initial={{ opacity: 0.1, scale: 0.8 }}
+            animate={{ y: [0, -30, 0], rotate: [0, 180, 360], opacity: [0.1, 0.2, 0.1] }}
+            transition={{ duration: 8 + i * 2, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
             className="absolute"
-            style={{
-              left: `${10 + i * 15}%`,
-              top: `${20 + (i % 3) * 30}%`,
-            }}
+            style={{ left: `${10 + i * 15}%`, top: `${20 + (i % 3) * 30}%` }}
           >
-            <div
-              className={`h-2 w-2 rounded-full bg-primary/30 ${
-                i % 2 === 0 ? "blur-sm" : ""
-              }`}
-            />
+            <div className={`h-2 w-2 rounded-full bg-primary/30 ${i % 2 === 0 ? "blur-sm" : ""}`} />
           </motion.div>
         ))}
       </div>
 
-      {/* Content container - no backdrop blur, fully integrated */}
-      <div className="relative mx-auto max-w-4xl text-center z-10">
-        {/* Headline with enhanced animation */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative mb-6 bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl lg:text-6xl drop-shadow-sm"
-        >
-          Early SaaS Trend Detection Using Real Market Signals - {" "}
-          <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-            Know What's About to Trend
-          </span>
-        </motion.h1>
-
-        {/* Subheadline with enhanced styling */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="relative mx-auto mb-8 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl drop-shadow-sm"
-        >
-          <span className="font-semibold text-foreground">TrendZero</span> tracks early signals across the web and shows you which SaaS topics
-          are accelerating - so you can act before everyone else.
-        </motion.p>
-
-        {/* Video Demo Section - Compact size, positioned before CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="relative mb-8 mx-auto max-w-2xl"
-        >
-          {/* Responsive YouTube video embed container - optimized size */}
-          <div className="relative w-full" style={{ paddingBottom: "56.25%" }}> {/* 16:9 aspect ratio */}
-            <iframe
-              className="absolute top-0 left-0 w-full h-full rounded-lg shadow-xl border border-border/50"
-              src="https://www.youtube.com/embed/YFraolt5VqE"
-              title="Platform Demo Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-        </motion.div>
-
-        {/* CTA Button with hover glow effect */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="relative"
-        >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Button
-              size="lg"
-              onClick={scrollToCTA}
-              className="relative text-base shadow-lg shadow-primary/20 transition-shadow hover:shadow-xl hover:shadow-primary/30"
+      {/* Content - split layout on lg */}
+      <div className="relative mx-auto max-w-6xl z-10">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+          {/* Left: Text content */}
+          <div className="flex-1 text-center lg:text-left">
+            {/* Now live badge - gradient border, shimmer */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-6 flex justify-center lg:justify-start"
             >
-              Get early access
-            </Button>
+              <span className="relative inline-flex items-center gap-2 rounded-full border border-primary/40 bg-gradient-to-r from-primary/20 to-primary/10 px-4 py-1.5 text-sm font-semibold text-primary shadow-lg shadow-primary/20">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                </span>
+                Now live
+                <span className="absolute inset-0 -z-10 rounded-full bg-primary/20 blur-lg opacity-50" />
+              </span>
+            </motion.div>
+
+            {/* Punchier headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="font-heading mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+            >
+              <span className="block">Spot SaaS trends</span>
+              <span className="bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent">
+                before everyone else
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+              className="relative mx-auto mb-8 max-w-xl text-lg leading-8 text-muted-foreground lg:mx-0"
+            >
+              <span className="font-semibold text-foreground">TrendZero</span> tracks early signals across the web and shows you which SaaS topics are accelerating — so you can act first.
+            </motion.p>
+
+            {/* CTA - gradient border, stronger shadow */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              className="flex flex-col items-center gap-4 lg:items-start"
+            >
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2 }}
+                className="flex flex-col sm:flex-row items-center gap-3"
+              >
+                <Button
+                  size="lg"
+                  onClick={handleGetStartedClick}
+                  className="relative overflow-hidden border-2 border-primary/50 bg-primary px-8 text-base font-semibold shadow-xl shadow-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/40"
+                >
+                  Get Started
+                  <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </Button>
+                <a href="/pricing" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+                  View Pricing
+                </a>
+              </motion.div>
+              <p className="flex items-center gap-2 text-xs text-muted-foreground">
+                <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                Secure
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Right: Video - stacked on mobile, side-by-side on lg */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
+            className="mt-10 flex-1 lg:mt-0 lg:min-w-0"
+          >
+            <div className="relative mx-auto max-w-xl overflow-hidden rounded-2xl border border-border/50 shadow-2xl shadow-black/20 ring-2 ring-primary/10">
+              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  className="absolute top-0 left-0 h-full w-full"
+                  src="https://www.youtube.com/embed/YFraolt5VqE"
+                  title="Platform Demo Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Smooth gradient fade to next section - extended and more gradual */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none"
-      />
+      {/* Wave divider to Problem section */}
+      <WaveDivider />
     </section>
   );
 }
-

@@ -16,16 +16,14 @@ export function ProblemSection() {
   ];
 
   return (
-    <section className="relative border-y border-border/50 bg-muted/30 px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-      {/* Smooth transition from hero section */}
-      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background via-background/50 to-transparent pointer-events-none" />
+    <section className="relative border-y border-border/50 bg-muted/30 px-4 pt-4 sm:pt-8 pb-16 sm:pb-24 sm:px-6 lg:px-8">
       <div className="relative mx-auto max-w-3xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl"
+          className="font-heading mb-8 text-3xl font-bold tracking-tight sm:text-4xl"
         >
           Most SaaS teams make decisions too late.
         </motion.h2>

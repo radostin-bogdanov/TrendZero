@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 /**
  * Credibility section component
  * Light social proof without fake testimonials
- * Uses subtle messaging for pre-launch phase
+ * Includes link to pricing for conversion
  */
 export function CredibilitySection() {
   const points = [
@@ -35,6 +36,20 @@ export function CredibilitySection() {
               {point}
             </motion.p>
           ))}
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            className="text-center"
+          >
+            <Link
+              href="/pricing"
+              className="font-medium text-primary hover:underline"
+            >
+              View pricing plans
+            </Link>
+          </motion.p>
         </motion.div>
       </div>
     </section>

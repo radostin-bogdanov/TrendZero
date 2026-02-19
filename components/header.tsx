@@ -1,6 +1,7 @@
 "use client";
 
 import { Logo } from "@/components/logo";
+import { APP_URL } from "@/lib/config";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
@@ -40,13 +41,25 @@ export function Header() {
             How it works
           </a>
           <a
+            href="/pricing"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Pricing
+          </a>
+          <a
             href="/blog"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Blog
           </a>
           <Button asChild size="sm" className="shadow-md">
-            <a href="/#final-cta">Get Early Access</a>
+            <a
+              href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get Started
+            </a>
           </Button>
         </nav>
 
@@ -54,7 +67,13 @@ export function Header() {
         <div className="flex items-center gap-3 md:hidden">
           {/* CTA Button - always visible on mobile */}
           <Button asChild size="sm" className="shadow-md">
-            <a href="/#final-cta">Get Early Access</a>
+            <a
+              href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get Started
+            </a>
           </Button>
 
           {/* Mobile Menu Button */}
@@ -112,6 +131,13 @@ export function Header() {
                   className="rounded-lg px-4 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 >
                   How it works
+                </a>
+                <a
+                  href="/pricing"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="rounded-lg px-4 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                >
+                  Pricing
                 </a>
                 <a
                   href="/blog"

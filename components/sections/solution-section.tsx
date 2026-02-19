@@ -22,7 +22,7 @@ export function SolutionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl"
+          className="font-heading mb-6 text-3xl font-bold tracking-tight sm:text-4xl"
         >
           We show you what's about to matter.
         </motion.h2>
@@ -61,7 +61,7 @@ export function SolutionSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-              className="flex items-start gap-3 rounded-xl bg-muted/50 p-4"
+              className="flex items-start gap-3 rounded-xl border border-border/50 bg-background/50 p-4 backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:bg-background/70"
             >
               <svg
                 className="mt-0.5 h-5 w-5 shrink-0 text-primary"

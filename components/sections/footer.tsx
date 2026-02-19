@@ -29,6 +29,12 @@ export function Footer() {
               About Us
             </Link>
             <Link
+              href="/pricing"
+              className="hover:text-foreground transition-colors"
+            >
+              Pricing
+            </Link>
+            <Link
               href="/contact"
               className="hover:text-foreground transition-colors"
             >

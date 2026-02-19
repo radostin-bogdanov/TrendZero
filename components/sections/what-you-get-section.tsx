@@ -23,7 +23,7 @@ export function WhatYouGetSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-10 text-center text-3xl font-bold tracking-tight sm:text-4xl"
+          className="font-heading mb-10 text-center text-3xl font-bold tracking-tight sm:text-4xl"
         >
           What you'll get with <span className="text-primary">TrendZero</span>
         </motion.h2>
@@ -42,7 +42,7 @@ export function WhatYouGetSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-              className="flex items-start gap-4 rounded-xl bg-muted/50 p-5"
+              className="flex items-start gap-4 rounded-xl border border-border/50 bg-background/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/20"
             >
               <svg
                 className="mt-0.5 h-6 w-6 shrink-0 text-primary"

@@ -72,7 +72,7 @@ export function GoogleAnalytics() {
 
 /**
  * Helper function to track custom events
- * Usage: trackEvent('button_click', { button_name: 'Get Early Access' })
+ * Usage: trackEvent('button_click', { button_name: 'Get Started' })
  */
 export function trackEvent(
   eventName: string,
@@ -85,7 +85,7 @@ export function trackEvent(
 
 /**
  * Helper function to track CTA clicks
- * Usage: trackCTAClick('hero_section', 'Get Early Access')
+ * Usage: trackCTAClick('hero_section', 'Get Started')
  */
 export function trackCTAClick(location: string, ctaText: string) {
   trackEvent("cta_click", {

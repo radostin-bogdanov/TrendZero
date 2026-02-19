@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 /**
@@ -8,7 +9,11 @@ import { motion } from "framer-motion";
  * Includes JSON-LD schema for rich results in search engines
  */
 export function FAQSection() {
-  const faqs = [
+  const faqs: Array<{
+    question: string;
+    answer: string;
+    pricingLink?: boolean;
+  }> = [
     {
       question: "What sources do we track?",
       answer:
@@ -30,9 +35,10 @@ export function FAQSection() {
         "TrendZero is not ideal for those looking for instant, already-popular trends or for businesses that need to react to trends that are already at their peak. If you're looking for what's trending right now rather than what will trend next, traditional trend analysis tools might be a better fit for your needs.",
     },
     {
-      question: "When will early access open?",
+      question: "How do I get started?",
       answer:
-        "We're currently building TrendZero and will be opening early access soon. Join our waitlist to be notified as soon as we're ready to onboard early users. Early access members will get priority access and the opportunity to shape the product with their feedback.",
+        "TrendZero is now live at app.trendzero.io. You can sign up and choose a plan. Explorer starts at $29/month.",
+      pricingLink: true,
     },
   ];
 
@@ -45,7 +51,8 @@ export function FAQSection() {
       name: faq.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answer,
+        text:
+          faq.answer + (faq.pricingLink ? " See our Pricing page for full details." : ""),
       },
     })),
   };
@@ -66,7 +73,7 @@ export function FAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl"
+            className="font-heading mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl"
           >
             FAQ
           </motion.h2>
@@ -79,13 +86,25 @@ export function FAQSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="rounded-xl bg-muted/50 p-6"
+                className="rounded-xl border border-border/50 bg-background/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/20"
               >
                 <h3 className="mb-3 text-xl font-semibold text-foreground">
                   {faq.question}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   {faq.answer}
+                  {faq.pricingLink && (
+                    <>
+                      {" "}
+                      <Link
+                        href="/pricing"
+                        className="font-medium text-primary underline hover:no-underline"
+                      >
+                        See our Pricing page
+                      </Link>{" "}
+                      for full details on all plans.
+                    </>
+                  )}
                 </p>
               </motion.div>
             ))}

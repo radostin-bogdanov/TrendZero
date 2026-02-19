@@ -1,21 +1,27 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { GoogleAnalytics } from "@/components/analytics";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-heading",
   display: "swap",
 });
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://trendzero.io";
 
 export const metadata: Metadata = {
-  title: "TrendZero — Early SaaS Trend Detection Using Real Market Signals",
+  title: "TrendZero — Discover Emerging SaaS Trends | Now Live",
   description:
-    "Identify SaaS trends early using real market signals. Know what your users will care about next — before it's obvious. Track acceleration signals and build what's about to trend.",
+    "TrendZero is live at app.trendzero.io. Discover emerging SaaS trends before they peak. Pricing from $29/mo. Track acceleration signals and build what's about to trend.",
   keywords: [
     "SaaS trend detection",
     "early SaaS trends",
@@ -23,9 +29,9 @@ export const metadata: Metadata = {
     "market signals",
     "SaaS analytics",
     "trend analysis",
-    "early access",
-    "waitlist",
+    "pricing",
     "TrendZero",
+    "live platform",
   ],
   authors: [{ name: "TrendZero" }],
   creator: "TrendZero",
@@ -35,9 +41,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "TrendZero — Early SaaS Trend Detection Using Real Market Signals",
+    title: "TrendZero — Discover Emerging SaaS Trends | Now Live",
     description:
-      "Spot emerging SaaS topics before they peak. Know what your users will care about next — before it's obvious.",
+      "Live at app.trendzero.io. Spot emerging SaaS topics before they peak. Pricing from $29/mo.",
     url: baseUrl,
     siteName: "TrendZero",
     images: [
@@ -53,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TrendZero — Early SaaS Trend Detection Using Real Market Signals",
+    title: "TrendZero — Discover Emerging SaaS Trends | Now Live",
     description:
-      "Identify SaaS trends early. Know what's about to trend before it's obvious.",
+      "Live at app.trendzero.io. Discover emerging SaaS trends. Pricing from $29/mo.",
     images: [`${baseUrl}/Logo2-2.png`],
   },
   robots: {
@@ -119,10 +125,12 @@ export default function RootLayout({
     name: "TrendZero",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
+    url: "https://app.trendzero.io",
     offers: {
       "@type": "Offer",
-      price: "0",
+      price: "29",
       priceCurrency: "USD",
+      priceValidUntil: "2026-12-31",
     },
     description:
       "SaaS trend detection platform that tracks acceleration signals and trend momentum. Identify emerging trends before they peak.",
@@ -136,7 +144,9 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${plusJakarta.variable} font-sans antialiased`}>
+        {/* Subtle noise overlay for premium depth */}
+        <div className="noise-overlay" aria-hidden />
         {/* Google Analytics 4 */}
         <GoogleAnalytics />
         

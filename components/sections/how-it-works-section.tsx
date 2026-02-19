@@ -106,7 +106,7 @@ export function HowItWorksSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-6 text-center text-3xl font-bold tracking-tight sm:text-4xl"
+          className="font-heading mb-6 text-center text-3xl font-bold tracking-tight sm:text-4xl"
         >
           How it works
         </motion.h2>
@@ -180,7 +180,7 @@ export function HowItWorksSection() {
                     </motion.div>
 
                     {/* Title with enhanced styling */}
-                    <h3 className="mb-4 text-2xl font-bold tracking-tight text-foreground">
+                    <h3 className="font-heading mb-4 text-2xl font-bold tracking-tight text-foreground">
                       {step.title}
                     </h3>
 
