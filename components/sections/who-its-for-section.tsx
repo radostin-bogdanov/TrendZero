@@ -123,7 +123,7 @@ export function WhoItsForSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 text-center text-lg font-medium"
         >
-          If speed and direction matter more than perfection — this is for you.
+          If speed and direction matter more than perfection, this is for you.
         </motion.p>
       </div>
     </section>

@@ -52,9 +52,9 @@ export function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-              className={`group relative rounded-xl border p-6 text-center transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10 ${
+              className={`group relative rounded-xl border p-6 text-center transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/8 ${
                 plan.popular
-                  ? "border-primary/40 bg-primary/5 shadow-lg shadow-primary/10"
+                  ? "border-primary/35 bg-primary/5 shadow-md shadow-primary/8"
                   : "border-border/50 bg-background/50 hover:border-primary/20"
               }`}
             >
@@ -87,7 +87,7 @@ export function PricingSection() {
           <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
             <Link href="/pricing">See full pricing</Link>
           </Button>
-          <Button asChild size="lg" className="w-full sm:w-auto shadow-lg shadow-primary/20">
+          <Button asChild size="lg" className="w-full sm:w-auto border border-primary/40 shadow-lg shadow-primary/18 hover:shadow-xl hover:shadow-primary/25">
             <a
               href={APP_URL}
               target="_blank"

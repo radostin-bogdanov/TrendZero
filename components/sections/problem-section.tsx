@@ -67,7 +67,7 @@ export function ProblemSection() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mb-6 text-lg leading-8 text-muted-foreground"
         >
-          The problem isn't lack of data—it's having too much of the wrong kind. Historical analytics tell you what already happened, not what's about to happen. By the time a topic appears in your SEO tools or becomes a trending hashtag, the early adopters have already moved on. You need signals that point forward, not backward.
+          The problem isn't lack of data, it's having too much of the wrong kind. Historical analytics tell you what already happened, not what's about to happen. By the time a topic appears in your SEO tools or becomes a trending hashtag, the early adopters have already moved on. You need signals that point forward, not backward.
         </motion.p>
 
         <motion.p

@@ -61,7 +61,7 @@ export function FinalCTASection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Button asChild size="lg" className="border-2 border-primary/50 shadow-xl shadow-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/40">
+          <Button asChild size="lg" className="border border-primary/40 shadow-lg shadow-primary/18 transition-all duration-300 hover:shadow-xl hover:shadow-primary/25">
             <a
               href={APP_URL}
               target="_blank"

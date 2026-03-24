@@ -12,7 +12,7 @@ interface LogoProps {
 /**
  * TrendZero Logo Component
  * Uses Logo2-2.png image with optional TrendZero text
- * Matches the brand identity with blue "Trend" and white "Zero"
+ * Brand lockup: logo PNG + optional text (primary = logo blue family)
  */
 export function Logo({ className = "", showText = true, size = "md" }: LogoProps) {
   const sizeClasses = {

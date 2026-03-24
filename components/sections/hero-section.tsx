@@ -54,7 +54,7 @@ export function HeroSection() {
           transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
           style={{
             backgroundImage:
-              "radial-gradient(at 40% 20%, hsl(var(--primary) / 0.15) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(var(--primary) / 0.1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(var(--primary) / 0.1) 0px, transparent 50%)",
+              "radial-gradient(at 40% 20%, hsl(var(--primary) / 0.07) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(var(--primary) / 0.05) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(var(--primary) / 0.05) 0px, transparent 50%)",
             backgroundSize: "200% 200%",
             width: "100%",
             height: "100%",
@@ -65,7 +65,7 @@ export function HeroSection() {
           animate={{ x: [0, 100, 0], y: [0, 50, 0], scale: [1, 1.2, 1] }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
           style={{ x: backgroundX, y: backgroundY }}
-          className="absolute top-20 left-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl"
+          className="absolute top-20 left-10 h-72 w-72 rounded-full bg-primary/6 blur-3xl"
         />
         <motion.div
           animate={{ x: [0, -80, 0], y: [0, 100, 0], scale: [1, 1.3, 1] }}
@@ -74,7 +74,7 @@ export function HeroSection() {
             x: useTransform(backgroundX, (v) => -v * 1.5),
             y: useTransform(backgroundY, (v) => v * 1.5),
           }}
-          className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-primary/8 blur-3xl"
+          className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
         />
         {[...Array(6)].map((_, i) => (
           <motion.div
@@ -85,7 +85,7 @@ export function HeroSection() {
             className="absolute"
             style={{ left: `${10 + i * 15}%`, top: `${20 + (i % 3) * 30}%` }}
           >
-            <div className={`h-2 w-2 rounded-full bg-primary/30 ${i % 2 === 0 ? "blur-sm" : ""}`} />
+            <div className={`h-2 w-2 rounded-full bg-primary/18 ${i % 2 === 0 ? "blur-sm" : ""}`} />
           </motion.div>
         ))}
       </div>
@@ -102,13 +102,13 @@ export function HeroSection() {
               transition={{ duration: 0.5 }}
               className="mb-6 flex justify-center lg:justify-start"
             >
-              <span className="relative inline-flex items-center gap-2 rounded-full border border-primary/40 bg-gradient-to-r from-primary/20 to-primary/10 px-4 py-1.5 text-sm font-semibold text-primary shadow-lg shadow-primary/20">
+              <span className="relative inline-flex items-center gap-2 rounded-full border border-primary/25 bg-gradient-to-r from-primary/10 to-primary/5 px-4 py-1.5 text-sm font-semibold text-primary shadow-md shadow-primary/8">
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-50" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
                 </span>
                 Now live
-                <span className="absolute inset-0 -z-10 rounded-full bg-primary/20 blur-lg opacity-50" />
+                <span className="absolute inset-0 -z-10 rounded-full bg-primary/12 blur-lg opacity-40" />
               </span>
             </motion.div>
 
@@ -119,9 +119,9 @@ export function HeroSection() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="font-heading mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
             >
-              <span className="block">Spot SaaS trends</span>
-              <span className="bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent">
-                before everyone else
+              <span className="block">Spot SaaS Trends</span>
+              <span className="bg-gradient-to-r from-primary via-primary to-primary/75 bg-clip-text text-transparent">
+                Before Everyone Else
               </span>
             </motion.h1>
 
@@ -131,7 +131,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               className="relative mx-auto mb-8 max-w-xl text-lg leading-8 text-muted-foreground lg:mx-0"
             >
-              <span className="font-semibold text-foreground">TrendZero</span> tracks early signals across the web and shows you which SaaS topics are accelerating — so you can act first.
+              <span className="font-semibold text-foreground">TrendZero</span> tracks early signals across the web and shows you which SaaS topics are accelerating, so you can act first.
             </motion.p>
 
             {/* CTA - gradient border, stronger shadow */}
@@ -150,7 +150,7 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   onClick={handleGetStartedClick}
-                  className="relative overflow-hidden border-2 border-primary/50 bg-primary px-8 text-base font-semibold shadow-xl shadow-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/40"
+                  className="relative overflow-hidden border border-primary/40 bg-primary px-8 text-base font-semibold shadow-lg shadow-primary/18 transition-all duration-300 hover:shadow-xl hover:shadow-primary/25"
                 >
                   Get Started
                   <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
@@ -177,7 +177,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
             className="mt-10 flex-1 lg:mt-0 lg:min-w-0"
           >
-            <div className="relative mx-auto max-w-xl overflow-hidden rounded-2xl border border-border/50 shadow-2xl shadow-black/20 ring-2 ring-primary/10">
+            <div className="relative mx-auto max-w-xl overflow-hidden rounded-2xl border border-border/50 shadow-2xl shadow-black/20 ring-1 ring-primary/8">
               <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
                 <iframe
                   className="absolute top-0 left-0 h-full w-full"

@@ -261,7 +261,7 @@ export function HowItWorksSection() {
             No black boxes. Every trend comes with a clear "why".
           </p>
           <p className="text-sm text-muted-foreground">
-            We show you the actual market signals behind each trend—where the data comes from, why it matters, and how you can use it. Tracking acceleration signals to spot emerging SaaS topics means transparency, not mystery.
+            We show you the actual market signals behind each trend, where the data comes from, why it matters, and how you can use it. Tracking acceleration signals to spot emerging SaaS topics means transparency, not mystery.
           </p>
         </motion.div>
       </div>
